@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="XLYJModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="X_Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConType" Type="nvarchar" MaxLength="600" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="600" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="600" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="CreatePerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyTime" Type="datetime" />
+    <Property Name="ModifyPerson" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="X_ConfigType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeCode" Type="nvarchar" MaxLength="600" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="600" />
+  </EntityType>
+  <EntityType Name="X_Student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="QQ" Type="nvarchar" MaxLength="50" />
+    <Property Name="WeChat" Type="nvarchar" MaxLength="500" />
+    <Property Name="Career" Type="nvarchar" MaxLength="500" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="CreatePerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyTime" Type="datetime" />
+    <Property Name="ModifyPerson" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="X_StudentInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="CardCode" Type="nvarchar" MaxLength="60" />
+    <Property Name="CardOptions" Type="nvarchar" MaxLength="60" />
+    <Property Name="CardValidate" Type="datetime" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="CreatePerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyTime" Type="datetime" />
+    <Property Name="ModifyPerson" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="X_StudentInfoType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="StudentInfoID" Type="int" />
+    <Property Name="TypeCode" Type="nvarchar" MaxLength="600" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="600" />
+    <Property Name="TypeContent" Type="nvarchar" MaxLength="600" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="CreatePerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="ModifyTime" Type="datetime" />
+    <Property Name="ModifyPerson" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="XLYJModelStoreContainer">
+    <EntitySet Name="X_Config" EntityType="Self.X_Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="X_ConfigType" EntityType="Self.X_ConfigType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="X_Student" EntityType="Self.X_Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="X_StudentInfo" EntityType="Self.X_StudentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="X_StudentInfoType" EntityType="Self.X_StudentInfoType" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
